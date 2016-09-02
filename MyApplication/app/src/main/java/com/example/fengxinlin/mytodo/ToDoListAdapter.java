@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.fengxinlin.mytodo.models.Todo;
@@ -15,7 +14,7 @@ import java.util.List;
 /**
  * Created by fengxinlin on 8/31/16.
  */
-public class ToDoListAdapter extends BaseAdapter{
+public class ToDoListAdapter extends ViewHolderAdapter{
     private Context context;
     private List<Todo> data;
 
@@ -60,5 +59,26 @@ public class ToDoListAdapter extends BaseAdapter{
 
     private static class ViewHolder {
         TextView todoText;
+    }
+
+    @Override
+    protected ViewHolderAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
+        View view = LayoutInflater.from(context).inflate(R.layout.main_list_item, parent, false);
+        return new TodoListViewHolder(view);
+    }
+
+    @Override
+    protected void onBindViewHolder(ViewHolderAdapter.ViewHolder viewHolder, int position) {
+        Todo todo = (Todo) getItem(position);
+        ((TodoListViewHolder) viewHolder).todoText.setText(todo.text);
+    }
+
+    private static class TodoListViewHolder extends ViewHolderAdapter.ViewHolder {
+        TextView todoText;
+
+        public TodoListViewHolder(@NonNull View view) {
+            super(view);
+            todoText = (TextView) view.findViewById(R.id.main_list_item_text);
+        }
     }
 }
