@@ -17,4 +17,8 @@
         </activity>
     </application>
 
+    <activity
+        android:name=".TodoEditActivity"
+        android:theme="@style/AppTheme.NoActionBarShadow"/>
+
 </manifest>
