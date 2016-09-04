@@ -1,8 +1,6 @@
 package com.example.fengxinlin.mytodo;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -22,7 +20,7 @@ public class ToDoListAdapter extends BaseAdapter{
     private MainActivity activity;
     private List<Todo> data;
 
-    public ToDoListAdapter(@NonNull Context context, List<Todo> data) {
+    public ToDoListAdapter(MainActivity activity, List<Todo> data) {
         this.activity = activity;
         this.data = data;
     }

@@ -7,7 +7,6 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -20,16 +19,19 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.fengxinlin.mytodo.models.Todo;
+import com.example.fengxinlin.mytodo.utils.AlarmUtils;
 import com.example.fengxinlin.mytodo.utils.DateUtils;
 import com.example.fengxinlin.mytodo.utils.UIUtils;
 
-import java.util.Date;
-
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by fengxinlin on 9/2/16.
  */
+
+
+@SuppressWarnings("ConstantConditions")
 public class TodoEditActivity extends AppCompatActivity implements
         DatePickerDialog.OnDateSetListener,
         TimePickerDialog.OnTimeSetListener {
@@ -45,7 +47,7 @@ public class TodoEditActivity extends AppCompatActivity implements
     private Date remindDate;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         todo = getIntent().getParcelableExtra(KEY_TODO);
@@ -98,8 +100,8 @@ public class TodoEditActivity extends AppCompatActivity implements
             dateTv.setText(DateUtils.dateToStringDate(remindDate));
             timeTv.setText(DateUtils.dateToStringTime(remindDate));
         } else {
-            dateTv.setText("Set date");
-            timeTv.setText("Set time");
+            dateTv.setText(R.string.set_date);
+            timeTv.setText(R.string.set_time);
         }
         setupDatePicker();
         setupCheckbox();
@@ -196,6 +198,10 @@ public class TodoEditActivity extends AppCompatActivity implements
         }
 
         todo.done = completeCb.isChecked();
+
+        if (remindDate != null) {
+            AlarmUtils.setAlarm(this, remindDate);
+        }
 
         Intent result = new Intent();
         result.putExtra(KEY_TODO, todo);
