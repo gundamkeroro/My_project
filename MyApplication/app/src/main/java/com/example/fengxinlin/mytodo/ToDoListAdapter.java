@@ -56,15 +56,15 @@ public class ToDoListAdapter extends BaseAdapter{
         final Todo todo = (Todo) getItem(position);
 
         vh.todoText.setText(todo.text);
-        vh.doneCheckbox.setChecked(todo.done);
-        UIUtils.setTextViewStrikeThrough(vh.todoText, todo.done);
-
         vh.doneCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton ButtonView, boolean isChecked) {
                 activity.updateTodo(position, isChecked);
             }
         });
+        vh.doneCheckbox.setChecked(todo.done);
+        UIUtils.setTextViewStrikeThrough(vh.todoText, todo.done);
+
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +100,7 @@ public class ToDoListAdapter extends BaseAdapter{
 //            todoText = (TextView) view.findViewById(R.id.main_list_item_text);
 //        }
 //    }
+
 
     private static class ViewHolder {
         TextView todoText;
