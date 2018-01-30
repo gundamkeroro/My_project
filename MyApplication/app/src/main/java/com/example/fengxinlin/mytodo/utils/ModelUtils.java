@@ -8,7 +8,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 /**
- * Created by fengxinlin on 9/2/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class ModelUtils {
     private static Gson gson = new Gson();

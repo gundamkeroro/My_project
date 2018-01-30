@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by fengxinlin on 9/3/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class AlarmUtils {
     public  static void setAlarm(@NonNull Context context, @NonNull Date date) {

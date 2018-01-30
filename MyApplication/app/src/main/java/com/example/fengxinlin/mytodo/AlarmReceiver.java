@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 /**
- * Created by fengxinlin on 9/3/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class AlarmReceiver extends BroadcastReceiver {
     @Override

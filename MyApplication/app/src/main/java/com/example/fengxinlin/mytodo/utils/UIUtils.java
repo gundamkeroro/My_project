@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.widget.TextView;
 
 /**
- * Created by fengxinlin on 9/2/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class UIUtils {
 

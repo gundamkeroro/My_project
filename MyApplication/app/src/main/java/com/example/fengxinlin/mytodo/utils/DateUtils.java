@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by fengxinlin on 8/31/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class DateUtils {
     private static DateFormat dateFormat = new SimpleDateFormat("yyyy MM dd HH mm", Locale.getDefault());

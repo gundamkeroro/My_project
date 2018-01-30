@@ -14,7 +14,7 @@ import com.example.fengxinlin.mytodo.utils.UIUtils;
 import java.util.List;
 
 /**
- * Created by fengxinlin on 8/31/16.
+ * Created by fengxinlin on 1/28/18.
  */
 public class ToDoListAdapter extends BaseAdapter{
     private MainActivity activity;
